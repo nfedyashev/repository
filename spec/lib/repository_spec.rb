@@ -3,11 +3,6 @@ require 'helper'
 
 module Repository
   describe "Repository" do
-    #class User < OpenStruct
-    #  def id
-    #    object_id
-    #  end
-    #end
     before(:each) do
       #FIXME
       ::Repository[User].clear

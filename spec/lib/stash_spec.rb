@@ -3,8 +3,7 @@ require 'helper'
 
 module Repository
   describe Stash do
-    #include Matchers
-    
+
     before do
       @frank = User.new(:name => "Frankenstein", :id => 1)
       @igor = User.new(:name => "Igor", :id => 2)
