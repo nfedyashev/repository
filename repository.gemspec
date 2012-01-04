@@ -11,7 +11,7 @@ Gem::Specification.new do |gem|
   gem.email = 'loci.master@gmail.com'
   gem.files = `git ls-files`.split("\n")
   gem.homepage = 'http://github.com/nfedyashev/repository'
-  gem.name = 'treqsury'
+  gem.name = 'repository'
   gem.require_paths = ['lib']
   gem.extra_rdoc_files = ['README.md']
   gem.required_rubygems_version = Gem::Requirement.new(">= 1.3.6") if gem.respond_to? :required_rubygems_version=
