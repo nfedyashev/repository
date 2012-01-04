@@ -16,7 +16,7 @@ module Repository
     end
 
     it "can clear all" do
-      ::Repository[User].store([User.new(id: 1), User.new(id: 2)])
+      ::Repository[User].store([User.new(:id => 1), User.new(:id => 2)])
       ::Repository[User].size.should == 2
       ::Repository.clear_all
       ::Repository[User].size.should == 0

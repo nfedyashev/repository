@@ -49,6 +49,25 @@ Add it to your Gemfile:
 gem 'repository'
 ```
 
+Supported Ruby Versions
+-------
+
+[travis]: http://travis-ci.org/nfedyashev/repository
+
+This library aims to support and is [tested against][travis] the following Ruby
+implementations:
+
+* Ruby 1.8.7
+* Ruby 1.9.2
+* Ruby 1.9.3
+* [JRuby][]
+* [Rubinius][]
+* [Ruby Enterprise Edition][ree]
+
+[jruby]: http://www.jruby.org/
+[rubinius]: http://rubini.us/
+[ree]: http://www.rubyenterpriseedition.com/
+
 Submitting a Pull Request
 -------
 

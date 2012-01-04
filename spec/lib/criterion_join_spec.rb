@@ -12,15 +12,15 @@ module Repository
       ::Repository[Address].size.should == 0
       ::Repository[Address].storage.size.should == 0
 
-      @alice = User.new(id: 1, :name => "Alice")
-      @bob = User.new(id: 2, :name => "Bob")
-      @charlie = User.new(id: 3, :name => "Charlie")
+      @alice = User.new(:id => 1, :name => "Alice")
+      @bob = User.new(:id => 2, :name => "Bob")
+      @charlie = User.new(:id => 3, :name => "Charlie")
       ::Repository[User].store [@alice, @bob, @charlie]
 
-      @chez_alice = Address.new(id: 111, :user_id => @alice.id, :street => "12 Apple St.")
-      @chez_alice2 = Address.new(id: 222, :user_id => @alice.id, :street => "8 Artichoke Ave.")
-      @chez_bob = Address.new(id: 333, :user_id => @bob.id, :street => "28 Banana St.")
-      @chez_charlie = Address.new(id: 444, :user_id => @charlie.id, :street => "42 Cherry St.")
+      @chez_alice = Address.new(:id => 111, :user_id => @alice.id, :street => "12 Apple St.")
+      @chez_alice2 = Address.new(:id => 222, :user_id => @alice.id, :street => "8 Artichoke Ave.")
+      @chez_bob = Address.new(:id => 333, :user_id => @bob.id, :street => "28 Banana St.")
+      @chez_charlie = Address.new(:id => 444, :user_id => @charlie.id, :street => "42 Cherry St.")
       ::Repository[Address].store [@chez_alice, @chez_alice2, @chez_bob, @chez_charlie]
 
       @nested_criterion = Criterion::Contains.new(:subject => "name", :value => "a")
