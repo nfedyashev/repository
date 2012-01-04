@@ -14,21 +14,31 @@ Examples
 --------
 
 ``` ruby
-require 'ostruct'
-=> true
-
 class User < OpenStruct
-end
-=> nil
+end  
 
 user = User.new(id: 1, name: 'John')
 => #<User id=1, name="John">
 
+user = User.new(id: 2, name: 'Mike')
+=> #<User id=2, name="Mike">
+
 Repository[User].store(user)
-=> [#<User id=1, name="John">]
+=> [#<User id=2, name="Mike">]
 
 Repository[User].search(user.id)
-=> [#<User id=1, name="John">]
+=> [#<User id=2, name="Mike">]
+
+def find_by_id_or_name(value)
+  c = Repository::Criterion::Or.new(
+    (Repository::Criterion::Equals.new(:subject => "id", :value => value)),
+    (Repository::Criterion::Equals.new(:subject => "name", :value => value))
+  )
+  Repository[User].search(c)
+end
+
+find_by_id_or_name('Mike')
+=> [#<User id=2, name="Mike">]
 
 ```
 
